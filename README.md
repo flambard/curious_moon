@@ -1,5 +1,5 @@
-Create the database:
+Create the database and import master_plan.csv:
 ```
 $ creatdb enceladus
-$ psql enceladus -f build.sql
+$ make
 ```
