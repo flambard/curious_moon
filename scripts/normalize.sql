@@ -91,13 +91,29 @@ select
   requests.id as request_id,
   spass_types.id as spass_type_id
 from import.master_plan
-inner join event_types
+left join event_types
   on event_types.description = import.master_plan.library_definition
-inner join targets
+left join targets
   on targets.description = import.master_plan.target
-inner join teams
+left join teams
   on teams.description = import.master_plan.team
-inner join requests
+left join requests
   on requests.description = import.master_plan.request_name
-inner join spass_types
+left join spass_types
   on spass_types.description = import.master_plan.spass_type;
+
+
+drop view if exists enceladus_events;
+create view enceladus_events as
+select
+ events.id,
+ events.title,
+ events.description,
+ events.time_stamp,
+ events.time_stamp::date as date,
+ event_types.description as event,
+ to_tsvector(concat(events.description, events.title)) as search
+from events
+inner join event_types on event_types.id = events.event_type_id
+where target_id = 28
+order by time_stamp asc;
