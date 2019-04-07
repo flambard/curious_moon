@@ -104,7 +104,7 @@ left join spass_types
 
 
 drop view if exists enceladus_events;
-create view enceladus_events as
+create materialized view enceladus_events as
 select
  events.id,
  events.title,
@@ -117,3 +117,6 @@ from events
 inner join event_types on event_types.id = events.event_type_id
 where target_id = 28
 order by time_stamp asc;
+
+create index idx_event_search
+on enceladus_events using GIN(search);
