@@ -1,54 +1,38 @@
-drop table if exists events;
+---
+--- Re-create database
+---
 
+drop table if exists events;
 drop table if exists event_types;
+drop table if exists targets;
+drop table if exists teams;
+drop table if exists requests;
+drop table if exists spass_types;
+
 create table event_types (
   id serial primary key,
   description text
 );
-insert into event_types (description)
-select distinct(library_definition)
-from import.master_plan;
 
-
-drop table if exists targets;
 create table targets (
   id serial primary key,
   description text
 );
-insert into targets (description)
-select distinct(target)
-from import.master_plan;
 
-
-drop table if exists teams;
 create table teams (
   id serial primary key,
   description text
 );
-insert into teams (description)
-select distinct(team)
-from import.master_plan;
 
-
-drop table if exists requests;
 create table requests (
   id serial primary key,
   description text
 );
-insert into requests (description)
-select distinct(request_name)
-from import.master_plan;
 
-
-drop table if exists spass_types;
 create table spass_types (
   id serial primary key,
   description text
 );
-insert into spass_types (description)
-select distinct(spass_type)
-from import.master_plan;
-
 
 create table events (
   id serial primary key,
@@ -61,6 +45,31 @@ create table events (
   team_id int references teams(id),
   request_id int references requests(id)
 );
+
+
+---
+--- Insert Master Plan data
+---
+
+insert into event_types (description)
+select distinct(library_definition)
+from import.master_plan;
+
+insert into targets (description)
+select distinct(target)
+from import.master_plan;
+
+insert into teams (description)
+select distinct(team)
+from import.master_plan;
+
+insert into requests (description)
+select distinct(request_name)
+from import.master_plan;
+
+insert into spass_types (description)
+select distinct(spass_type)
+from import.master_plan;
 
 insert into events (
   time_stamp,
