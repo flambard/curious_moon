@@ -8,7 +8,7 @@ SELECT
     events.time_stamp,
     events.time_stamp::date AS date,
     event_types.description AS event,
-    to_tsvector(concat(events.description, events.title)) AS search
+    to_tsvector(concat(events.description, ' ', events.title)) AS search
 FROM
     events
     INNER JOIN event_types ON event_types.id = events.event_type_id
