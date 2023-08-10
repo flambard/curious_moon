@@ -1,4 +1,4 @@
--- Deploy curious_moon:20230519_2047_add_cda_import_table to pg
+-- Deploy curious_moon:20230810_2209_add_cda_import_table to pg
 BEGIN;
 CREATE TABLE import.cda(
     event_id text,

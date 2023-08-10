@@ -8,12 +8,12 @@
 20230518_2144_add_master_plan_tables 2023-05-18T19:44:45Z Markus Flambard,,, <markus@calchas> # Create normalized tables for the master plan
 20230518_2148_normalize_master_plan 2023-05-18T19:48:23Z Markus Flambard,,, <markus@calchas> # Copy imported master plan to normalized tables
 20230518_2156_add_enceladus_events_view 2023-05-18T19:56:57Z Markus Flambard,,, <markus@calchas> # Create a materialized view enceladus_events
-20230519_2047_add_cda_import_table 2023-05-19T18:48:23Z Markus Flambard,,, <markus@calchas> # Create an import table for CDA data
-20230519_2051_import_cda_data 2023-05-19T18:51:54Z Markus Flambard,,, <markus@calchas> # Import the CDA data csv file
-20230519_2103_add_cda_schema 2023-05-19T19:03:43Z Markus Flambard,,, <markus@calchas> # Create a new schema CDA
-20230519_2111_add_cda_impacts_table_from_data 2023-05-19T19:12:02Z Markus Flambard,,, <markus@calchas> # Create a CDA impacts table from import data
 20230519_2143_add_inms_import_table 2023-05-19T19:44:01Z Markus Flambard,,, <markus@calchas> # Create an import table for INMS data
 20230519_2155_import_inms_data 2023-05-19T19:55:27Z Markus Flambard,,, <markus@calchas> # Import INMS data from csv
 20230807_2239_add_flyby_altitudes_view 2023-08-07T20:40:29Z Markus Flambard,,, <markus@calchas> # Add flyby_altitudes view
 20230807_2246_add_low_time_function 2023-08-07T20:46:51Z Markus Flambard,,, <markus@calchas> # Add low_time function
 20230807_2256_add_flybys_table 2023-08-07T20:56:29Z Markus Flambard,,, <markus@calchas> # Add flybys table
+20230810_2209_add_cda_import_table 2023-08-10T20:12:22Z Markus Flambard,,, <markus@calchas> # Add CDA import table
+20230810_2215_import_cda_data 2023-08-10T22:15:54Z Markus Flambard,,, <markus@calchas> # Import the CDA data csv file
+20230810_2219_add_cda_schema 2023-08-10T22:19:43Z Markus Flambard,,, <markus@calchas> # Create a new schema CDA
+20230810_2221_add_cda_impacts_table_from_data 2023-08-10T22:21:02Z Markus Flambard,,, <markus@calchas> # Create a CDA impacts table from import data
