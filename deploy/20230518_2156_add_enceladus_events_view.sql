@@ -12,8 +12,9 @@ SELECT
 FROM
     events
     INNER JOIN event_types ON event_types.id = events.event_type_id
+    INNER JOIN targets ON targets.id = events.target_id
 WHERE
-    target_id = 28
+    targets.description = 'Enceladus'
 ORDER BY
     time_stamp ASC;
 ---
